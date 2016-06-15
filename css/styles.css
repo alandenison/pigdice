@@ -1,3 +1,41 @@
 #player2Buttons {
   display: none;
 }
+
+#Player1, #Player2, #turn-total, #roll-result {
+  font-size: 2em;
+}
+
+.lose {
+  color: red;
+}
+
+#indicator {
+  display: none;
+}
+
+#turn-total, #roll-result {
+  background-color: grey;
+  color: white;
+  padding:10px;
+}
+
+#turn-total {
+    height: 60px;
+}
+
+#roll-result {
+  height: 100px;
+}
+
+#rules2{
+  display: none;
+}
+
+#winPig {
+  display: none;
+}
+
+#losePig {
+  display: none;
+}

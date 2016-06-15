@@ -9,47 +9,92 @@
     <title></title>
   </head>
   <body>
-    <h2>Player 1 Score</h2>
-    <div id="Player1">
-      0
-    </div>
-    <h2>Player 2 Score</h2>
-    <div id="Player2">
-      0
-    </div>
-    <h2>turn rolls</h2>
-    <div id="roll-result">
-
-    </div>
-    <h2>TURN TOTAL</h2>
-    <div id="turn-total">
-
-    </div>
-    <div id="player1Buttons">
-      <h1>PLAYER 1</h1>
-    <button type="submit" id="btn-roll1" class="btn">roll</button>
-    <button type="submit" id="btn-hold1" class="btn">HOLD</button>
-    </div>
-
-    <div id="player2Buttons">
-      <h1>PLAYER 2</h1>
-    <button type="submit" id="btn-roll2" class="btn">roll</button>
-    <button type="submit" id="btn-hold2" class="btn">HOLD</button>
-    </div>
-
-    <div id="diceRadio">
-      <div id="diceNumber" class="radio">
-        <label>
-          <input type="radio" name="diceValue" value="1dice" checked>
-            1 di
-          </label>
+    <img id="winPig" src="img/winPig.jpg"/>
+    <img id="losePig" src="img/losePig.jpg"/>
+    <div class="container">
+      <div class="header">
+        <h1>Pig Dice</h1>
       </div>
-      <div class="radio">
-        <label>
-        <input type="radio" name="diceValue" value="2dice">
-          2 dice
-        </label>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Turn Rolls:</h3>
+          <div id="roll-result">
+
+          </div>
+          <h3>Turn Total:</h3>
+          <div id="turn-total">
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3>Player 1 Score:</h3>
+          <div id="Player1">
+            0
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3>Player 2 Score:</h3>
+          <div id="Player2">
+            0
+          </div>
+        </div>
+      </div>
+      <div id="playerButtons">
+        <hr>
+        <div id="player1Buttons">
+          <h1>PLAYER 1</h1>
+        <button type="submit" id="btn-roll1" class="btn">roll</button>
+        <button type="submit" id="btn-hold1" class="btn">HOLD</button>
+        </div>
+
+        <div id="player2Buttons">
+          <h1>PLAYER 2</h1>
+        <button type="submit" id="btn-roll2" class="btn">roll</button>
+        <button type="submit" id="btn-hold2" class="btn">HOLD</button>
+        </div>
+        <h1 id="indicator">NEXT PLAYER GET READY</h1>
+
+
+        <div id="using-dice">
+          <p>Using <span id="amount-dice">1 di</span>.</p>
+        <div>
+        <div id="diceRadio">
+          <div id="diceNumber" class="radio">
+            <label>
+              <input type="radio" name="diceValue" value="1dice" id="1dice" checked>
+                1 di
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="diceValue" value="2dice" id="2dice">
+              2 dice
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <hr>
+        <div id="rules1">
+        <h2>The Game (with one di):</h2>
+        <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":</p>
+          <ul>
+            <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+            <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+            <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+          <ul>
+        <p>The first player to score 100 or more points wins.</p>
+      </div>
+      <div id="rules2">
+        <h2>The Game (with two dice):</h2>
+        <ul>
+        <li>Two standard dice are rolled. If neither shows a 1, their sum is added to the turn total.</li>
+        <li>If a single 1 is rolled, the player scores nothing and the turn ends.</li></li>
+        <li>If two 1s are rolled, the player’s entire score is lost, and the turn ends.</li>
+        <li>If a double is rolled, the point total is added to the turn total as with any roll but the player is obligated to roll again (possible sub-variation of the two-dice game)</li>
+        <ul>
+      </div>
       </div>
     </div>
-    </body>
+  </body>
 </html>

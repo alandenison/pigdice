@@ -45,6 +45,18 @@
 
 
 $(document).ready(function(){
+  $("#1dice").click(function(){
+    $("#amount-dice").text("1 di");
+    $("#rules2").fadeOut();
+    $("#rules1").fadeIn();
+  });
+  $("#2dice").click(function(){
+    $("#amount-dice").text("2 dice");
+    $("#rules1").fadeOut();
+    $("#rules2").fadeIn();
+
+  });
+
   $("#btn-roll1").click(function(){
     $(".lose").remove();
     $("#diceRadio").fadeOut(100);
@@ -61,17 +73,24 @@ $(document).ready(function(){
       if(resetArray[0] === "true"){
         player1Score = 0;
         $("#Player1").text(player1Score);
+        $("#losePig").show();
+        $("#losePig").fadeOut(5000);
         alert("BUAHHAHAHHAH");
-        $("#player1Buttons").hide();
-        $("#player2Buttons").show();
+        $("#roll-result").html("<span class='lose'>You rolled TWO 1s, your score is GONE!</span>");
+        $("#player1Buttons").fadeOut(00);
+        $("#indicator").fadeIn(100);
+        $("#indicator").fadeOut(1500);
+        $("#player2Buttons").fadeIn(2000);
         resetArray.shift();
       }
     if(oneArray[0] === "true") {
       turnTotal = 0;
       $("#turn-total").text(turnTotal);
-      $("#roll-result").html("<span class='lose'>Rolled a 1. YOU LOSE</span>");
-      $("#player1Buttons").hide();
-      $("#player2Buttons").show();
+      $("#roll-result").html("<span class='lose'>You rolled a 1, your turn is OVER!</span>");
+      $("#player1Buttons").fadeOut(00);
+      $("#indicator").fadeIn(100);
+      $("#indicator").fadeOut(1500);
+      $("#player2Buttons").fadeIn(2000);
       oneArray.shift();
       console.log("oneArray has been cleared");
       console.log(oneArray);
@@ -88,15 +107,21 @@ $(document).ready(function(){
     turnTotal = 0
     if (player1Score >=100 && multiDice != "2dice") {
       alert(" PLAYER 1 WINNER ");
+      $("#winPig").show();
+      $("#winPig").fadeOut(5000);
     } else if (player1Score >= 200){
+      $("#winPig").show();
+      $("#winPig").fadeOut(5000);
       alert("PLAYER 1 WINNER");
     }
       else {
     $("#roll-result").text("");
     $("#turn-total").text("");
     $("#Player1").text(player1Score);
-    $("#player1Buttons").hide();
-    $("#player2Buttons").show();
+    $("#player1Buttons").fadeOut(00);
+    $("#indicator").fadeIn(100);
+    $("#indicator").fadeOut(1500);
+    $("#player2Buttons").fadeIn(2000);
     }
 
   });
@@ -113,17 +138,24 @@ $(document).ready(function(){
       if(resetArray[0] === "true"){
         player2Score = 0;
         $("#Player2").text(player2Score);
+        $("#losePig").show();
+        $("#losePig").fadeOut(5000);
         alert("BUAHHAHAHHAH");
-        $("#player2Buttons").hide();
-        $("#player1Buttons").show();
+        $("#roll-result").html("<span class='lose'>You rolled TWO 1s, your score is GONE!</span>");
+        $("#player2Buttons").fadeOut(00);
+        $("#indicator").fadeIn(100);
+        $("#indicator").fadeOut(1500);
+        $("#player1Buttons").fadeIn(2000);
         resetArray.shift();
       }
       if(oneArray[0] === "true") {
         turnTotal = 0;
         $("#turn-total").text(turnTotal);
-        $("#roll-result").html("<span class='lose'>Rolled a 1. YOU LOSE</span>");
-        $("#player2Buttons").hide();
-        $("#player1Buttons").show();
+        $("#roll-result").html("<span class='lose'>You rolled a 1, your turn is OVER!</span>");
+        $("#player2Buttons").fadeOut(00);
+        $("#indicator").fadeIn(100);
+        $("#indicator").fadeOut(1500);
+        $("#player1Buttons").fadeIn(2000);
         oneArray.shift();
         console.log("oneArray has been cleared");
         console.log(oneArray);
@@ -140,16 +172,22 @@ $(document).ready(function(){
     player2Score = turnTotal + parseInt(player2Score);
     turnTotal = 0
     if (player2Score >=100 && multiDice != "2dice") {
+      $("#winPig").show();
+      $("#winPig").fadeOut(5000);
       alert(" PLAYER 2 WINNER ");
     } else if (player2Score >= 200){
       alert("PLAYER 2 WINNER");
+      $("#winPig").show();
+      $("#winPig").fadeOut(5000);
     }
       else {
     $("#roll-result").text("");
     $("#turn-total").text("");
     $("#Player2").text(player2Score);
-    $("#player2Buttons").hide();
-    $("#player1Buttons").show();
+    $("#player2Buttons").fadeOut(00);
+    $("#indicator").fadeIn(100);
+    $("#indicator").fadeOut(1500);
+    $("#player1Buttons").fadeIn(2000);
     }
   });
 });
