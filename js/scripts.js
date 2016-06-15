@@ -23,7 +23,7 @@ $(document).ready(function(){
    player1Score = turnTotal+ parseInt(player1Score);
    turnTotal = 0
    $("#roll-result").text("");
+   $("#turn-total").text("");
    $("#Player1").text(player1Score);
-   alert(player1Score);
  })
 });
