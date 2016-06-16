@@ -9,12 +9,96 @@
     <title></title>
   </head>
   <body>
-    <img id="winPig" src="img/winPig.jpg"/>
-    <img id="losePig" src="img/losePig.jpg"/>
-    <div class="container">
-      <div class="header">
+    <div class="navbar navbar-dark">
+      <div class="container">
         <h1>Pig Dice</h1>
       </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form id="player-names" class="form-inline">
+            <div class="form-group">
+              <label for="player1-name">Enter Player 1's name: </label>
+              <input id="player1-name" value="Porky" class="form-control"></input>
+            </div>
+            <div class="form-group">
+              <label for="player2-name">Enter Player 2's name: </label>
+              <input id="player2-name" value="Arnold" class="form-control"></input>
+            </div>
+            <div class="form-group">
+              <label for="startScore">Play to: </label>
+              <input type="number" min=0 id="startingScore" class="form-control" value=100></input>
+            </div>
+            <button id="beginButton" type="submit" class="btn btn-primary">Begin!</button>
+            <div id="diceRadio">
+              <div id="diceNumber" class="radio">
+                <label>
+                  <input type="radio" name="diceValue" value="1dice" id="1dice">
+                    1 di
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="diceValue" value="2dice" id="2dice">
+                    2 dice
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6" id="avatarDiv">
+          <label for="avatar">PLAYER 1 Select Your Iconic Pig Avatar</label>
+          <select class="" name="" id="avatar">
+            <option value="img/porky.png">Porky</option>
+            <option value="img/arnold.png">Arnold</option>
+            <option value="img/missPiggy.png">Miss Piggy</option>
+            <option value="img/piglet.png">Piglet</option>
+            <option value="img/babe.png">Babe</option>
+          </select>
+          <label for="avatar">PLAYER 2 Select Your Iconic Pig Avatar</label>
+          <select class="" name="" id="avatar2">
+            <option value="img/arnold.png">Arnold</option>
+            <option value="img/porky.png">Porky</option>
+            <option value="img/missPiggy.png">Miss Piggy</option>
+            <option value="img/piglet.png">Piglet</option>
+            <option value="img/babe.png">Babe</option>
+          </select>
+        </div>
+      </div>
+      <div id="rules">
+        <div id="rules1">
+          <img src="img/die_face_1.png" class="rules-die"/>
+        <h2>The Game (with one di):</h2>
+        <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":</p>
+          <ul>
+            <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+            <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+            <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+          <ul>
+        <p>The first player to score 100 or more points wins.</p>
+      </div>
+      <div id="rules2">
+        <img src="img/die_face_1.png" class="rules-die"/>
+        <img src="img/die_face_2.png" class="rules-die"/>
+        <h2>The Game (with two dice):</h2>
+        <ul>
+        <li>Two standard dice are rolled. If neither shows a 1, their sum is added to the turn total.</li>
+        <li>If a single 1 is rolled, the player scores nothing and the turn ends.</li></li>
+        <li>If two 1s are rolled, the player’s entire score is lost, and the turn ends.</li>
+        <li>If a double is rolled, the point total is added to the turn total as with any roll but the player is obligated to roll again (possible sub-variation of the two-dice game)</li>
+        <ul>
+      </div>
+      </div>
+      <div id="records">
+        <h4>Previous games:</h4>
+        <ol id="gameTracker">
+
+        </ol>
+      </div>
+      <img id="winPig" src="img/winPig.jpg"/>
+      <img id="losePig" src="img/losePig.jpg"/>
+      <div id="game-page">
       <div class="row">
         <div class="col-md-4">
           <h3>Turn Rolls:</h3>
@@ -27,13 +111,13 @@
           </div>
         </div>
         <div class="col-md-4">
-          <h3>Player 1 Score:</h3>
+          <h3><span class="player-one">Player 1</span> Score:</h3>
           <div id="Player1">
             0
           </div>
         </div>
         <div class="col-md-4">
-          <h3>Player 2 Score:</h3>
+          <h3><span class="player-two">Player 2</span> Score:</h3>
           <div id="Player2">
             0
           </div>
@@ -41,60 +125,68 @@
       </div>
       <div id="playerButtons">
         <hr>
+        <h1 id="indicator">NEXT PLAYER GET READY</h1>
         <div id="player1Buttons">
-          <h1>PLAYER 1</h1>
-        <button type="submit" id="btn-roll1" class="btn">roll</button>
-        <button type="submit" id="btn-hold1" class="btn">HOLD</button>
+          <h1><span class="player-one">PLAYER 1</span></h1>
+        <button type="submit" id="btn-roll1" class="btn btn-lg btn-primary"></button>
+        <button type="submit" id="btn-hold1" class="btn btn-lg btn-primary">HOLD</button>
         </div>
 
         <div id="player2Buttons">
-          <h1>PLAYER 2</h1>
-        <button type="submit" id="btn-roll2" class="btn">roll</button>
-        <button type="submit" id="btn-hold2" class="btn">HOLD</button>
+          <h1><span class="player-two">PLAYER 2</span></h1>
+        <button type="submit" id="btn-roll2" class="btn btn-lg btn-primary"></button>
+        <button type="submit" id="btn-hold2" class="btn btn-lg btn-primary">HOLD</button>
         </div>
-        <h1 id="indicator">NEXT PLAYER GET READY</h1>
 
 
-        <div id="using-dice">
-          <p>Using <span id="amount-dice">1 di</span>.</p>
-        <div>
-        <div id="diceRadio">
-          <div id="diceNumber" class="radio">
-            <label>
-              <input type="radio" name="diceValue" value="1dice" id="1dice" checked>
-                1 di
-              </label>
+
+        <div id="allFaces" class="row">
+
+        <div id= "diceFaces">
+          <div id = "di1" class = "dicePics">
+            <img src="img/die_face_1.png"/>
           </div>
-          <div class="radio">
-            <label>
-            <input type="radio" name="diceValue" value="2dice" id="2dice">
-              2 dice
-            </label>
+          <div id = "di2" class = "dicePics">
+            <img src="img/die_face_2.png"/>
+          </div>
+          <div id = "di3" class = "dicePics">
+            <img src="img/die_face_3.png"/>
+          </div>
+          <div id = "di4" class = "dicePics">
+            <img src="img/die_face_4.png"/>
+          </div>
+          <div id = "di5" class = "dicePics">
+            <img src="img/die_face_5.png"/>
+          </div>
+          <div id = "di6" class = "dicePics">
+            <img src="img/die_face_6.png"/>
+          </div>
+          <div id = "dubs" class = "dicePics">
           </div>
         </div>
-      </div>
-      <div class="row">
-        <hr>
-        <div id="rules1">
-        <h2>The Game (with one di):</h2>
-        <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":</p>
-          <ul>
-            <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
-            <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
-            <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
-          <ul>
-        <p>The first player to score 100 or more points wins.</p>
-      </div>
-      <div id="rules2">
-        <h2>The Game (with two dice):</h2>
-        <ul>
-        <li>Two standard dice are rolled. If neither shows a 1, their sum is added to the turn total.</li>
-        <li>If a single 1 is rolled, the player scores nothing and the turn ends.</li></li>
-        <li>If two 1s are rolled, the player’s entire score is lost, and the turn ends.</li>
-        <li>If a double is rolled, the point total is added to the turn total as with any roll but the player is obligated to roll again (possible sub-variation of the two-dice game)</li>
-        <ul>
-      </div>
+        <div id="animateDiv">
+        <div id = "dic1" class="randomFaces">
+          <img src="img/die_face_1.png"/>
+        </div>
+        <div id = "dic2" class="randomFaces">
+          <img src="img/die_face_2.png"/>
+        </div>
+        <div id = "dic3" class="randomFaces">
+          <img src="img/die_face_3.png"/>
+        </div>
+        <div id = "dic4" class="randomFaces">
+          <img src="img/die_face_4.png"/>
+        </div>
+        <div id = "dic5" class="randomFaces">
+          <img src="img/die_face_5.png"/>
+        </div>
+        <div id = "dic6" class="randomFaces">
+          <img src="img/die_face_6.png"/>
+        </div>
       </div>
     </div>
+
+    </div>
+  </div>
   </body>
 </html>

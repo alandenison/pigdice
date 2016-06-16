@@ -1,4 +1,16 @@
+#game-page {
+  display: none;
+}
+
+.navbar {
+  background-color: pink;
+}
+
 #player2Buttons {
+  display: none;
+}
+
+#player-names button {
   display: none;
 }
 
@@ -38,4 +50,28 @@
 
 #losePig {
   display: none;
+}
+
+.dicePics {
+  display: none;
+  float: left;
+}
+.randomFaces {
+  display: none;
+  float: left;
+}
+
+.rules-die {
+  max-width: 200px;
+}
+
+.form-group {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 960px){
+  #rules {
+    display: none;
+  }
 }
