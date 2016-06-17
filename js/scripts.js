@@ -107,8 +107,8 @@ $(document).ready(function(){
     maxScore.push(parseInt($("#startingScore").val()));
     avatarArray.push($("#avatar").val());
     avatarArray.push($("#avatar2").val());
-    $("#btn-roll1").append("<img src=" + avatarArray[0] + "></img>");
-    $("#btn-roll2").append("<img src=" + avatarArray[1] + "></img>");
+    $("#btn-roll1").append("<img src=" + avatarArray[0] + " alt='ROLL'></img>");
+    $("#btn-roll2").append("<img src=" + avatarArray[1] + " alt='ROLL'></img>");
     $(".player-one").text(nameOne);
     $(".player-two").text(nameTwo);
     playerIds.push(nameOne, nameTwo);
